@@ -1,0 +1,21 @@
+version: '3'
+services:
+  api:
+    image: "tkubik/taskrunner-api"
+    mem_limit: 128m
+    hostname: api
+    environment:
+      - NODE_ENV=production
+    command: npm run start:prod
+
+  client:
+    image: "tkubik/taskrunner-client"
+    mem_limit: 128m
+    hostname: client  
+
+  nginx:
+    image: "tkubik/taskrunner-nginx"
+    mem_limit: 128m
+    hostname: nginx
+    ports:
+      - "80:80"

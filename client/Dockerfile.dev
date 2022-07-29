@@ -1,0 +1,6 @@
+FROM node:14-alpine3.14
+WORKDIR /usr/app
+COPY ./package.json ./
+# RUN npm install -g @angular/cli @angular-devkit/build-angular
+RUN npm install
+COPY . .
