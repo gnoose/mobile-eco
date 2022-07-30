@@ -24,5 +24,15 @@ $ docker run hello-world
 ## Running the app
 
 ```bash
-$ docker compose -f docker-compose-dev.yml up
+# development
+$ npm run dev
+
+# development build
+$ npm run dev:build
+
+# test
+$ npm run test
+
+# test build
+$ npm run test:build
 ```

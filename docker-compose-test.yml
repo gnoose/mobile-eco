@@ -21,21 +21,16 @@ services:
       - /usr/app/node_modules
     depends_on:
       - postgres
-    command: npm run start:dev
-    ports:
-      - '3005:3005'
+    command: npm run test
 
   client:
-    stdin_open: true
     build:
       dockerfile: Dockerfile.dev
       context: ./client
     volumes:
       - /usr/app/node_modules
       - ./client:/usr/app
-    command: npm run dev
-    ports:
-      - '3000:3000'
+    command: npm run test
 
 volumes:
   postgres_data:
