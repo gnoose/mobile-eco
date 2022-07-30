@@ -25,11 +25,11 @@ services:
 
   client:
     build:
-      dockerfile: Dockerfile.dev
       context: ./client
+      dockerfile: Dockerfile.dev
     volumes:
-      - /usr/app/node_modules
       - ./client:/usr/app
+      - /usr/app/node_modules
     command: npm run test
 
 volumes:
